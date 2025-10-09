@@ -3,14 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 这个是我的博客
+title: "超级玉米人的博客"
 subtitle: '用来记录我的学习'
 description: '一个基于Hexo的技术博客'
 keywords: study
 author: 超级玉米人
 language: zh-CN
 timezone: 'Asia/HeBei'
-
 
 
 # URL
@@ -105,6 +104,19 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/你的用户名/你的用户名.github.io.git
+  repo: https://github.com/Yoyolp/yoyolp.github.io.git
   branch: main
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+
+# config of hexo-renderer-markdown-it
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-katex

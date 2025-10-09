@@ -25,3 +25,6 @@ hexo clean && hexo g && hexo s
 hexo new draft "草稿文章"
 
 hexo new "我的第一篇文章"
+
+hexo clean && hexo generate && hexo deploy
+# 4. 部署到 GitHub
