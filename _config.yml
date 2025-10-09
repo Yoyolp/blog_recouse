@@ -4,7 +4,7 @@
 
 # Site
 title: "超级玉米人的博客"
-subtitle: '用来记录我的学习'
+subtitle: '时间Cia不多llo~(∠・ω< )⌒★'
 description: '一个基于Hexo的技术博客'
 keywords: study
 author: 超级玉米人
@@ -120,3 +120,25 @@ markdown:
     quotes: '“”‘’'
   plugins:
     - markdown-it-katex
+
+# Live2D 看板娘配置
+live2d:
+  enable: true
+  pluginModelPath: assets/
+  model:
+    # 选择模型，对应你安装的模型包名
+    use: live2d-widget-model-koharu # 小春
+    # use: live2d-widget-model-chitose # 千岁
+    
+  display:
+    position: right    # 显示位置：left / right
+    width: 150         # 宽度
+    height: 300        # 高度
+    hOffset: 0         # 水平偏移
+    vOffset: -20       # 垂直偏移
+  mobile:
+    show: true         # 在移动端显示
+    scale: 0.5         # 移动端缩放
+  react:
+    opacity: 0.8       # 透明度
+    opacityDefault: 0.8 # 默认透明度
