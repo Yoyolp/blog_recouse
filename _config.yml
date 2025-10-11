@@ -125,11 +125,10 @@ markdown:
 live2d:
   enable: true
   pluginModelPath: assets/
+  # 模型交互设置
   model:
-    # 选择模型，对应你安装的模型包名
     use: live2d-widget-model-koharu # 小春
-    # use: live2d-widget-model-chitose # 千岁
-    
+
   display:
     position: right    # 显示位置：left / right
     width: 150         # 宽度
@@ -142,3 +141,4 @@ live2d:
   react:
     opacity: 0.8       # 透明度
     opacityDefault: 0.8 # 默认透明度
+  
