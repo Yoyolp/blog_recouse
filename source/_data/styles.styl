@@ -1,0 +1,141 @@
+body {
+  /* background: #000; */
+
+  background: url(/images/bg.webp) no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  opacity: 0.95;
+}
+
+
+/* GitHub 丝带样式 */
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.github-corner svg {
+  fill: #151513;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+
+.github-corner .octo-arm {
+  transform-origin: 130px 106px;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(-25deg); }
+  40%, 80% { transform: rotate(10deg); }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+
+
+
+
+
+
+
+#sidebar-digital-clock {
+    margin: 0 0 20px 0;
+    padding: 16px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e4e8;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        transform: translateY(-1px);
+    }
+    
+    .clock-container {
+        .clock-time {
+            font-size: 1.7em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 6px;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .clock-date {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+        
+        .clock-weekday {
+            font-size: 0.85em;
+            color: #999;
+        }
+    }
+}
+
+/* // 暗色模式适配 */
+.dark-mode #sidebar-digital-clock {
+    background: #2d2d2d;
+    border-color: #444;
+    
+    .clock-time {
+        color: #fff;
+    }
+    
+    .clock-date {
+        color: #ccc;
+    }
+    
+    .clock-weekday {
+        color: #aaa;
+    }
+}
+
+/* // 移动端适配 */
+@media (max-width: 767px) {
+    #sidebar-digital-clock {
+        margin: 0 15px 20px 15px;
+        padding: 14px;
+        
+        .clock-container {
+            .clock-time {
+                font-size: 1.5em;
+            }
+            
+            .clock-date {
+                font-size: 0.9em;
+            }
+            
+            .clock-weekday {
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+
+
+
+

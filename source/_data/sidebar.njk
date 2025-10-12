@@ -1,0 +1,41 @@
+{# 电子钟组件 #}
+<div id="sidebar-digital-clock" class="site-overview-item">
+    <div class="clock-container">
+        <div class="clock-time">00:00:00</div>
+        <div class="clock-date">2024-01-01</div>
+        <div class="clock-weekday">星期一</div>
+    </div>
+</div>
+
+<script>
+// 简化版电子钟，避免复杂的 JS
+function initClock() {
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        
+        const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        const weekday = weekdays[now.getDay()];
+        
+        const clockElement = document.getElementById('sidebar-digital-clock');
+        if (clockElement) {
+            clockElement.querySelector('.clock-time').textContent = hours + ':' + minutes + ':' + seconds;
+            clockElement.querySelector('.clock-date').textContent = year + '-' + month + '-' + day;
+            clockElement.querySelector('.clock-weekday').textContent = weekday;
+        }
+    }
+    
+    updateClock();
+    setInterval(updateClock, 1000);
+}
+
+// 延迟初始化，确保 DOM 加载完成
+setTimeout(initClock, 100);
+</script>
+

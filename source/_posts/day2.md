@@ -1,9 +1,15 @@
 ---
 title: day2
+categories:
+  - ctf
 ---
 
+写了两道题目
+
+<!--more-->
+
 ## MeoCtf 题目 [吃豆人](https://ctf.xidian.edu.cn/training/18?challenge=820)
-### 标签 Mini_L-CTF_2025 Web
+### 标签 Mini_L-CTF_2025 Misc
 在进入靶机地址后得到如下画面
 ![图片1](/images/day2/1.png)
 然后通过F12 打开开发者工具的时候分析**game.js** 文件分析胜利检查代码
@@ -52,9 +58,8 @@ function initGame() {
 就能得到flag:miniLCTF{tH1S_g4Me_so-eA5Y-rIghT?6083a665}
 
 
-
 ## MeoCtf 题目 [麦霸评分](https://ctf.xidian.edu.cn/training/18?challenge=836)
-### 标签 Mini_L_-CTF_2025 Web
+### 标签 Mini_L_-CTF_2025 Misc
 在进入靶机地址后得到如下画面
 ![图片2](/images/day2/2.png)
 将网页保存到本地
