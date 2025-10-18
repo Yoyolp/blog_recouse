@@ -6,3 +6,8 @@ title: about
 # 这是一个关于页面
 但是我还没有写好
 
+
+使用vim的十六进制编辑器功能
+
+vim -b filename
+

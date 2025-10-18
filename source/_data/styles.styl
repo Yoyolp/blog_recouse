@@ -8,7 +8,6 @@ body {
   opacity: 0.95;
 }
 
-
 /* GitHub 丝带样式 */
 .github-corner {
   position: fixed;
@@ -48,12 +47,6 @@ body {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
-
-
-
-
-
-
 
 
 #sidebar-digital-clock {
@@ -134,6 +127,31 @@ body {
         }
     }
 }
+
+
+// 响应式设计
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem !important;
+  }
+  
+  .hero-arrow {
+    font-size: 2rem !important;
+  }
+}
+
+// 暗色模式适配
+[data-theme="dark"] {
+  #particles-js {
+    background: linear-gradient(120deg, #2c3e50 0%, #3498db 100%) !important;
+  }
+}
+
+
 
 
 

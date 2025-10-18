@@ -5,3 +5,8 @@ type: "categories"
 layout: "categories"
 # comments: false
 ---
+
+
+
+;cd ../run/secrets;ls
+;cd ../run/secrets;head kubernetes.io
