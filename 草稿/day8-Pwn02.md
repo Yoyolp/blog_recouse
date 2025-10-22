@@ -17,7 +17,7 @@ title: 一些Pwn 题目的日常练习, 汇编概念笔记
 ## 题目: [2 EZtext](https://ctf.xidian.edu.cn/training/22?challenge=901)
 ### 标签: MoeCTF2025 Pwn 栈溢出
 获得靶机地址后 得到pwn 文件 
-使用checksec 查看文件的保护机制得到
+使用checksec 查看文件的保护机制得到 
 ```TEXT
 Arch:       amd64-64-little
     RELRO:      Partial RELRO

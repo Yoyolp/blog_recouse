@@ -6,7 +6,7 @@ Pwn 入门指北,Pwn 环境配置
 <!--more-->
 # Pwn的标准流程:
  + 1. checkesc 检查保护机制
- + 2. patchslf 替换libc, ld ...[option]
+ + 2. patchelf 替换libc, ld ...[option]
  + 3. 使用IDA等反汇编反编译挖掘漏洞
  + 4. 用GDB + pwntools 执行确认漏洞
  + 5. 使用Python + pwntools 编写利用脚本
@@ -50,7 +50,6 @@ pip install pwntools
 ```bash
 # 将以下内容添加到 ~/.bashrc 文件末尾
 echo 'alias pwn-env="source ~/PATH.../pwn-venv/bin/activate"' >> ~/.bashrc
-
 # 重新加载配置
 source ~/.bashrc
 
@@ -86,7 +85,6 @@ io.interactive()                    # 手动接收 flag。
 
 运行该脚本即可获取flag ： moectf{tH3_BegINNiNG-0F-ForM4t2c964a9fe}
 
-
 ## MoeCTF 题目 [1 ez_u64](https://ctf.xidian.edu.cn/training/22?challenge=872)
 本题目要求 使用pwntools中的u64,p64,u32,p32将特定大小的字节流与整数相互转换。
 
@@ -99,8 +97,6 @@ io.interactive()                    # 手动接收 flag。
  + 大端序 高位字节存储在低地址 特点:
    - 高位字节存储在低地址
    - 网络字节序通常使用大端序
-
-
 
 小端序：像写数字一样，从右往左（低位在前）
 ```python

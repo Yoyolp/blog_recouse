@@ -119,3 +119,4 @@ php 常用的函数
 . ./flag
 ```
 执行文件得到flag：0xGame{y0u_c4n_4ls0_3x3cu73_c0mm4nd_w17h0u7_5h_4nd_c47}
+
