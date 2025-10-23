@@ -1,0 +1,7 @@
+{
+  "markdown.preview.fontFamily": "Maple Mono NF CN",
+  "markdown.preview.fontSize": 18,
+  "markdown.preview.openMarkdownLinks": "inEditor",
+  "vscode-office.previewCode": false,
+  "vscode-office.previewCodeHighlight.showLineNumber": false
+}

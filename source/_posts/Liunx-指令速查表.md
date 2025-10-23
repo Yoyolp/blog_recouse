@@ -65,13 +65,14 @@ cat /proc/1234/fdinfo/3        # 查看特定fd的详细信息
 /proc/self/fd/ - 当前进程的fd
 /proc/PID/fd/ - 指定进程的fd
 lsof -p PID - 更详细的文件打开信息
+
+
+tar -xf XXX  # 解压文件
+
+tar -czvf   # 压缩 .tar.gz 最常见
+tar -cvf    # 解压 .tar
+tar -cjvf   # 解压 .tarbz2
+
+ln -s goal link_name  # 创建软连接
+
 ```
-
-
-
-
-
-
-
-
-
