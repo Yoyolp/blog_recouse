@@ -1,7 +1,6 @@
 ---
 title: 考核错题
 ---
-
 第二次考核的错题
 
 <!--more-->
@@ -21,6 +20,7 @@ struct VM
   unsigned short reg[3];
 }
 ```
+
 代码1
 
 ```c
@@ -134,7 +134,7 @@ unsigned __int16 __fastcall vm::step(VM *this)
       this->regs[this->mem[this->pc + 1]] ^= v8;
       this->pc += 3;
       return 0;
-    case 0xC1u:                           //  uint16        |            
+    case 0xC1u:                           //  uint16        |          
       this->regs[this->mem[this->pc + 1]] *= this->mem[this->pc + 2] | (unsigned __int16)(this->mem[this->pc + 3] << 8);
       this->pc += 4;
       return 0;
@@ -372,8 +372,8 @@ unsigned __int16 __fastcall vm::step(unsigned __int8 *this)
 }
 ```
 
-
 通过分析
+
 ```c
   unsigned int n0xFC; // eax
   __int16 v2; // dx
@@ -394,21 +394,26 @@ unsigned __int16 __fastcall vm::step(unsigned __int8 *this)
 pc:
 
 从程序
+
 ```c
 this->pc += 2;
 *((_WORD *)this + 2304) += 2;
 ```
+
 发现 this->pc 等价于*((_WORD *)this + 2304)，所以可以知道 2034 为 pc 相当于基地址的偏移量
 
 sp:
 从程序
+
 ```c
 v6 = this->sp;
 v6 = *((_WORD *)this + 2305);
 ```
+
 同理发现 sp 的偏移量为 2305
 
 flags:
+
 ```c
 this->flags = v8 == this->regs[this->mem[this->pc + 1]];
 *((_WORD *)this + 2306) = v8 == *((_WORD *)this + *(this + *((unsigned __int16 *)this + 2304) + 1) + 2307);
@@ -435,29 +440,36 @@ this->regs[this->mem[this->pc + 1]] = this->stack[sp];
 mem:
 
 通过
+
 ```c
 n0xFC = *(this + *((unsigned __int16 *)this + 2304));
 n0xFC = this->mem[this->pc];
 ```
-发现 mem是从 0 开始的,到最近的 stack(2048) 结束,但是通过代码中reg 的赋值为 
+
+发现 mem是从 0 开始的,到最近的 stack(2048) 结束,但是通过代码中reg 的赋值为
+
 ```c
 this->regs[this->mem[this->pc + 1]] = (this->mem[this->pc + 3] << 8) | this->mem[this->pc + 2];
-``` 
+```
+
 发现:
-存放一个 regs\[i\] 的存放需要两个 mem 分别放在 高8，和低8位，而regs\[i\] 的类型是 **uint16(16位)** 
+存放一个 regs\[i\] 的存放需要两个 mem 分别放在 高8，和低8位，而regs\[i\] 的类型是 **uint16(16位)**
 所以合理猜测 mem 的类型 为**uint8(8位)**, 所以 0-2048 一共占用 4096 个字节, 而一个 **uint8** 占用一个字节
 所以mem 的长度 4096
 
 regs:
+
 ```c
 *((_WORD *)this + 2307)
 this->regs[0]
 ```
+
 通过以上代码发现 regs\[0\] 的地址是 2307, 但是没有找到明显的边界,但是确定regs的长度一定大于等于3
 
 汇总以上信息
+
 ```TEXT
-0:      uint8  -> unsigned char mem[4096]     
+0:      uint8  -> unsigned char mem[4096]   
 
 2048:   uint16 -> unsigned short stack[256]   
 2304:   uint16 -> unsigned short pc
@@ -466,15 +478,19 @@ this->regs[0]
 
 2307:   uint16 -> unsigned short reg[3+]
 ```
+
 由于最后一个reg 看不出所以需要自己补上
 从表达式
+
 ```c
 this->regs[this->mem[this->pc + 1]] ^= v8;
 ```
+
 发现理论上 this->mem 的值为 0~255 一共256个值
 所以 regs 在设计上应该也要能装下 这些索引，所以 reg的大小应该为 256
 
 所以最终得到的结果是
+
 ```c
 struct VM
 {
@@ -491,6 +507,7 @@ struct VM
 ```
 
 ## 1. 定义一个字符串，实现一个功能要求输入字符串可以输出字符串的长度，不要使用strlen等函数
+
 实现效果如下:
 
 ```c
@@ -500,6 +517,7 @@ string Length:24
 ```
 
 由于C语言中的字符串是以\\0 为结尾的所以通过这个特性我们可以实现字符串长度的获取
+
 ```c
 size_t mystrlen(char* arr)
 {
@@ -526,6 +544,5 @@ int main(void)
 
 }
 ```
+
 注意： 这里不适用scanf 是因为scanf 在读取到 空白符 制表符 和换行符等，会直接截断
-
-
