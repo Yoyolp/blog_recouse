@@ -59,11 +59,11 @@ print(vigenere_encrypt(flag, key))
 所以根据维吉尼亚密码的公式:
 
 
-$$ C^i = P^i + K^i (mod L) $$
+$$ C^i = P^i + K^i (\mod L) $$
 
 <br>
 
-$$ P^i = C^i - K^i (mod L) $$
+$$ P^i = C^i - K^i (\mod L) $$
 
 <br>
 其中 L 为 字母表的长度
