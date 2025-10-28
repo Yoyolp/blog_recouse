@@ -1,5 +1,6 @@
 ---
 title: ida 使用教程
+katex: true
 ---
 
 ida 使用教程

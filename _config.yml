@@ -109,17 +109,9 @@ deploy:
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 
-# config of hexo-renderer-markdown-it
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  plugins:
-    - markdown-it-katex
+
+
+
 
 # Live2D 看板娘配置
 live2d:

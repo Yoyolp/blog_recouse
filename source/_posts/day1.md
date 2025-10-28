@@ -59,11 +59,11 @@ print(vigenere_encrypt(flag, key))
 所以根据维吉尼亚密码的公式:
 
 
-$$ C^i = P^i + K^i (\mod L) $$
+$$ C_i = P_i + K_i (\mod L) $$
 
 <br>
 
-$$ P^i = C^i - K^i (\mod L) $$
+$$ P_i = C_i - K_i (\mod L) $$
 
 <br>
 其中 L 为 字母表的长度
@@ -94,9 +94,6 @@ result = vigenere_decrypt(ciphertext, key)
 print(result)
 ```
 得到flag: 0xGame{you_learned_vigenere_cipher_2df4b1c2e3}
-
-
-
 
 
 
