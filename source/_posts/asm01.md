@@ -1,8 +1,7 @@
 ---
 title: ASM 01
 ---
-CPU 概念， 寄存器
-
+CPU 概念， 寄存器,物理内存 常用指令
 <!--more-->
 
 1. 汇编指令是机器指令的助记符，同机器指令一一对应
@@ -194,7 +193,7 @@ int main()
 
 获得如下汇编代码
 
-```asm
+```ASM
 	.def	@feat.00;
 	.scl	3;
 	.type	0;
@@ -233,9 +232,6 @@ L_.str:                                 # @.str
 	.addrsig_sym ___mingw_printf
 ```
 
-
-
-
 ## 字-WORD
 
 字的大小取决于CPU的架构
@@ -246,3 +242,50 @@ L_.str:                                 # @.str
 | **8086/16位**   | 16位 (2字节) | 8位  | 32位  | 64位  |
 | **x86/32位**    | 32位 (4字节) | 16位 | 64位  | 128位 |
 | **x86-64/64位** | 64位 (8字节) | 32位 | 128位 | 256位 |
+
+
+## 使用汇编写一个简单的程序
+环境: WSL-Ubuntu, gcc
+```asm
+.intel_syntax noprefix
+.global _start
+_start:
+	mov rdi, 42      ; 退出状态码
+	mov rax, 60      ; 系统调用约定 退出
+	syscall
+```
+
+```bash
+
+as ./program.s -o ./program.o
+ld ./program.o -o ./program
+
+> ./program
+> echo $?
+42
+```
+
+### Hello World
+```asm
+.intel_syntax noprefix
+.data
+msg:
+  .ascii "Hello_World!\n"
+  len = . - msg
+
+.text
+  .global _start
+
+_start:
+  # 写入
+  mov rax, 1 # 系统调用 - write
+  mov rdi, 1
+  lea rsi, [msg]
+  mov rdx, len
+  syscall
+
+  # exit
+  mov rax, 60
+  mov rdi, 0
+  syscall
+```
