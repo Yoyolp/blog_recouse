@@ -1,7 +1,7 @@
 ---
 title: ASM 02
 ---
-gdb 的使用
+gdb 的使用 Liunx syscall 系统调用约定， loop， Call&Ret, Stack栈的使用
 
 <!--more-->
 
@@ -507,6 +507,7 @@ ret imm16     # 返回并调整栈指针
 ### 实践：
 
 下面是一个使用 `call` & `ret` 的例子:
+
 ```x86asm
 .intel_syntax noprefix
 .data
@@ -532,5 +533,3 @@ _func_print_msg:
   syscall
   ret
 ```
-
-
