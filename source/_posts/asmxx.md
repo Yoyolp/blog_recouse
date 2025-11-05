@@ -21,7 +21,7 @@ title: ASMXX
 # print 函数 实现原型
 .global asm_print
 .type asm_print, @function
-__asm_print:
+__asm_print_old:
   # push address[msg]
   # push msg_len
   mov rax, 1
@@ -31,11 +31,26 @@ __asm_print:
   syscall 
   ret 16
 
+.global __asm_func_print_stack
+.type __asm_func_print_stack, @function
+__asm_func_print_stack:
+  push rbp
+  mov rbp, rsp
+
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, [rbp + 24]
+  mov rdx, [rbp + 16]
+  syscall
+
+  leave
+  ret 16
+
 # 打印字符
 .macro asm_print _str _str_len
   push offset \_str
   push \_str_len
-  call __asm_print  
+  call __asm_func_print_stack  
 .endm
 
 # 打印字符并在末尾添加换行
@@ -46,6 +61,8 @@ __asm_print:
 
   push offset char_endline
   push char_endline_len
-  call __asm_print
+  call __asm_func_print_stack 
 .endm
 ```
+
+
