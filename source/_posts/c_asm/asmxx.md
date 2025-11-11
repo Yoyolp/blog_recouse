@@ -2,6 +2,9 @@
 title: ASMXX
 ---
 为方便写汇编代码，所以将一些常用的功能封装到 `asm_simple_func.s` 中， 这是其中的内容
+
+同时这是 [GAS汇编器](https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1)文档地址
+
 <!--more-->
 ## `asm_simple_func.s` :
 
@@ -64,5 +67,3 @@ __asm_func_print_stack:
   call __asm_func_print_stack 
 .endm
 ```
-
-
