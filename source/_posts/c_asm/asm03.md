@@ -1,5 +1,8 @@
 ---
 title: ASM03
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 GAS 汇编表示偏移地址, .include 伪指令
 

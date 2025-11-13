@@ -1,5 +1,8 @@
 ---
 title: C语言常用函数速查
+categories:
+  - 语言相关
+  - c
 ---
 C function Table
 

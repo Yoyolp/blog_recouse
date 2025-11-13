@@ -1,5 +1,8 @@
 ---
 title: ASM 02
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 gdb 的使用 Liunx syscall 系统调用约定， loop， Call&Ret, Stack栈的使用
 

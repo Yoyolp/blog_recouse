@@ -1,5 +1,8 @@
 ---
 title: ASM06
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 nop, .rept 指令的使用
 

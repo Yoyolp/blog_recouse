@@ -1,5 +1,8 @@
 ---
 title: ASMXX
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 为方便写汇编代码，所以将一些常用的功能封装到 `asm_simple_func.s` 中， 这是其中的内容
 

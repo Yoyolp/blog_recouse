@@ -1,5 +1,8 @@
 ---
 title: ASM04
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 
 

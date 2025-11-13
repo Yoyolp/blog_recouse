@@ -1,5 +1,8 @@
 ---
 title: ASM 01
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 CPU 概念， 寄存器,物理内存 常用指令
 <!--more-->

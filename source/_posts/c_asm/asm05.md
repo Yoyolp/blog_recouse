@@ -1,5 +1,8 @@
 ---
 title: ASM 05
+categories:
+  - 语言相关
+  - GAS_x86_64汇编
 ---
 跳转指令 CMP, JNC, JC
 
