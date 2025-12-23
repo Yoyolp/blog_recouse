@@ -443,6 +443,7 @@ int randd(void)
 }
 // gcc -shared -fPIC -o ./a.so ./a.c
 ```
+
 ## str_err
 
 将文件拖入ida
@@ -485,7 +486,6 @@ void __cdecl shell()
 +0000000000000010
 ```
 分析得知`main`中存在栈溢出漏洞(B), 和一处字符串比较漏洞(A), 可以使用使用(B)处的溢出漏洞篡改整个栈的结构，同时由于函数`strcpy` 遇到`\x00`会截止，所以可以利用这一个特性绕过`strcmp(password, correct_password)`的判定
-
 
 于是得出如下攻击脚本
 ```python
