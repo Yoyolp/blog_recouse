@@ -281,6 +281,12 @@ payload = flat([
 # to write
 toWrite = b"write_doc 0 " + payload
 
+get the best I And i will go to home
+
+this is MY new keyborad and It is pay my 
+
+
+
 p.sendafter(b"> ", toWrite)
 
 p = cmd(p, "switch_user 2")
